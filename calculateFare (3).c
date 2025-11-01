@@ -1,6 +1,6 @@
 /*
-Name:LARMECK GABRIEL
-Reg No:PA106/G/28805/25
+Name:Moses Ouma Ochola 
+Reg No:PA106/G/28795/25
 Decription:C program to compute fare
 */
 #include <stdio.h>
@@ -22,4 +22,5 @@ int main(){
 	printf("Your total fare is %d", fare);
 	
 	return 0;
+
 }
