@@ -1,6 +1,6 @@
 /*
-Name:LARMECK GABRIEL
-Reg No:PA106/G/28805/25
+Name:Moses Ouma Ochola 
+Reg No:PA106/G/28795/25
 Description:C program to convert temperature to celsius
 */
 #include<stdio.h>
@@ -23,4 +23,5 @@ int main(){
 	printf("The temperature in celsius is %.2f", celsius);
 		
 	return 0;
+
 }
