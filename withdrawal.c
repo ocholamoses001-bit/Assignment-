@@ -1,6 +1,6 @@
 //Simple hello World program
 /*
-Name:khamisi Moses Ouma 
+Name:Moses Ouma Ochola 
 Reg no:PA106/G/28795/25
 ) Description: Prorams to show ATM withdrawal 
 */
