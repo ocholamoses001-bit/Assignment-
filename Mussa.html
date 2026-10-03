@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Thee Mussa Café</title>
+<style>
+    * { box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; margin: 0; padding: 15px; background: #f5f5f5; }
+  h1 { text-align: center; color: #3e2723; margin-bottom: 20px; }
+  .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; }
+  .product { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .product img { width: 100%; height: 140px; object-fit: cover; }
+  .product-info { padding: 12px; }
+  .product h3 { margin: 0 0 5px; font-size: 16px; color: #3e2723; }
+  .product p { margin: 0 0 10px; color: #6d4c41; font-weight: bold; }
+  button { background: #25D366; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-size: 15px; width: 100%; }
+  button:hover { background: #20b958; }
+  #cart { background: white; padding: 15px; margin-top: 25px; border-radius: 10px; position: sticky; bottom: 10px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
+  .remove { background: #ff4444; padding: 4px 8px; font-size: 13px; margin-left: 8px; width: auto; }
+  .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #eee; }
+</style>
+</head>
+<body></body>
+
+<h1>Thee Mussa Café</h1>  
+
+<div class="menu-grid">
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Espresso">
+    <div class="product-info"><h3>Espresso</h3><p>KSh 150</p><button onclick="addToCart('Espresso', 150)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Cappuccino">
+    <div class="product-info"><h3>Cappuccino</h3><p>KSh 250</p><button onclick="addToCart('Cappuccino', 250)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400" alt="Latte">
+    <div class="product-info"><h3>Latte</h3><p>KSh 280</p><button onclick="addToCart('Latte', 280)">Add</button></div>
+  </div>
+  <div class="product">        
+    <img src="https://images.unsplash.com/photo-1510707577719-ae7e82505c31?w=400" alt="Americano">
+    <div class="product-info"><h3>Americano</h3><p>KSh 200</p><button onclick="addToCart('Americano', 200)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1564890366391-78ba118b959d?w=400" alt="Mocha">
+    <div class="product-info"><h3>Mocha</h3><p>KSh 300</p><button onclick="addToCart('Mocha', 300)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?w=400" alt="Macchiato">
+    <div class="product-info"><h3>Macchiato</h3><p>KSh 270</p><button onclick="addToCart('Macchiato', 270)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400" alt="Flat White">
+    <div class="product-info"><h3>Flat White</h3><p>KSh 260</p><button onclick="addToCart('Flat White', 260)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400" alt="Iced Coffee">
+    <div class="product-info"><h3>Iced Coffee</h3><p>KSh 220</p><button onclick="addToCart('Iced Coffee', 220)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1564890366391-78ba118b959d?w=400" alt="Hot Chocolate">
+    <div class="product-info"><h3>Hot Chocolate</h3><p>KSh 230</p><button onclick="addToCart('Hot Chocolate', 230)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1576092762791-0216922ca8ba?w=400" alt="Green Tea">
+    <div class="product-info"><h3>Green Tea</h3><p>KSh 120</p><button onclick="addToCart('Green Tea', 120)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1576092762791-0216922ca8ba?w=400" alt="Masala Chai">
+    <div class="product-info"><h3>Masala Chai</h3><p>KSh 150</p><button onclick="addToCart('Masala Chai', 150)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1508737804146-84ccb77e9f7c?w=400" alt="Croissant">
+    <div class="product-info"><h3>Croissant</h3><p>KSh 180</p><button onclick="addToCart('Croissant', 180)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Chocolate Muffin">
+    <div class="product-info"><h3>Chocolate Muffin</h3><p>KSh 160</p><button onclick="addToCart('Chocolate Muffin', 160)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=400" alt="Blueberry Muffin">
+    <div class="product-info"><h3>Blueberry Muffin</h3><p>KSh 160</p><button onclick="addToCart('Blueberry Muffin', 160)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a0e?w=400" alt="Cheesecake Slice">
+    <div class="product-info"><h3>Cheesecake Slice</h3><p>KSh 350</p><button onclick="addToCart('Cheesecake Slice', 350)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Chocolate Cake">
+    <div class="product-info"><h3>Chocolate Cake</h3><p>KSh 320</p><button onclick="addToCart('Chocolate Cake', 320)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400" alt="French Toast">
+    <div class="product-info"><h3>French Toast</h3><p>KSh 400</p><button onclick="addToCart('French Toast', 400)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1525351484167-9421a1872dbe?w=400" alt="Club Sandwich">
+    <div class="product-info"><h3>Club Sandwich</h3><p>KSh 450</p><button onclick="addToCart('Club Sandwich', 450)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" alt="Caesar Salad">
+    <div class="product-info"><h3>Caesar Salad</h3><p>KSh 380</p><button onclick="addToCart('Caesar Salad', 380)">Add</button></div>
+  </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400" alt="Fruit Smoothie">
+    <div class="product-info"><h3>Fruit Smoothie</h3><p>KSh 300</p><button onclick="addToCart('Fruit Smoothie', 300)">Add</button></div>
+  </div>
+</div>
+
+<div id="cart">
+  <h3>Your Order</h3>
+  <div id="cartItems">Empty</div>
+  <p><strong>Total: KSh <span id="total">0</span></strong></p>
+  <button onclick="placeOrder()">Order on WhatsApp</button>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+// Firebase config for Realtime Database
+const firebaseConfig = {
+  apiKey: "AIzaSyBtUk5nauoaKn7SSD6jQfJMjEWmB_Svg6s",
+  authDomain: "mussa-22998.firebaseapp.com",
+  databaseURL: "https://mussa-22998-default-rtdb.firebaseio.com",
+  projectId: "mussa-22998",
+  storageBucket: "mussa-22998.firebasestorage.app",
+  messagingSenderId: "1028515839811",
+  appId: "1:1028515839811:web:9b923cd45c7a65d5a8b9f6",
+  measurementId: "G-767JNRBT58"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+if (/whatsapp/i.test(navigator.userAgent)) {
+  document.body.insertAdjacentHTML('afterbegin', `
+    <div ="background:#ffcc00;padding:12px;text-align:center;font-weight:bold;">
+      ⚠️ Please open this page in Chrome for the Order button to work.
+    </div>
+  `);
+}
+// Your WhatsApp number - Kenya format
+const WHATSAPP_NUMBER = "254112008588";
+
+let cart = [];
+
+window.addToCart = function(name, price) {
+  cart.push({ name, price });
+  updateCartUI();
+}
+
+window.removeFromCart = function(index) {
+  cart.splice(index, 1);
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const cartDiv = document.getElementById('cartItems');
+  const totalSpan = document.getElementById('total');
+  
+  if (cart.length === 0) {
+    cartDiv.innerHTML = 'Empty';
+    totalSpan.textContent = '0';
+    return;
+  }
+  
+  cartDiv.innerHTML = cart.map((item, i) => 
+    `<div class="cart-item">
+      <span>${item.name} - KSh ${item.price}</span>
+      <button class="remove" onclick="removeFromCart(${i})">X</button>
+    </div>`
+  ).join('');
+  
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  totalSpan.textContent = total;
+}
+
+async function saveOrderToFirebase(orderData) {
+  try {
+    const ordersRef = ref(db, 'orders');
+    const newOrderRef = push(ordersRef);
+    await set(newOrderRef, {
+      ...orderData,
+      createdAt: Date.now(),
+      status: 'pending'
+    });
+    console.log("Order saved:", newOrderRef.key);
+    return newOrderRef.key;
+  } catch (error) {
+    console.error("Error saving order:", error);
+    alert("Failed to save order. Check console for details.");
+  }
+}
+window.placeOrder = async function() {
+  if (cart.length === 0) {
+    alert("Cart is empty");
+    return;
+  }
+  
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  const orderData = { items: cart, total: total };
+  const message = `New Order from Thee Mussa Café:\n\n${cart.map(i => `- ${i.name}: KSh ${i.price}`).join('\n')}\n\nTotal: KSh ${total}`;
+
+// With this:
+const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+location.href = url;
+
+
+  // Open WhatsApp FIRST (synchronous, before any await)
+  window.open(url, '_blank');
+
+  // Then save to Firebase in the background
+  await saveOrderToFirebase(orderData);
+  
+  cart = [];
+  updateCartUI();
+}
+
+</script>
+
+</body>
+</html>
